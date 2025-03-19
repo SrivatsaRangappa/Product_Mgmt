@@ -8,7 +8,6 @@ class ApiService {
     String? token = prefs.getString('token');
 
     if (token == null) {
-    
       return null;
     }
 
@@ -28,7 +27,6 @@ class ApiService {
     String? token = prefs.getString('token');
 
     if (token == null) {
-  
       return null;
     }
 

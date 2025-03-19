@@ -22,13 +22,13 @@ class _LoginScreenState extends State<LoginScreen> {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
           content: Text("Username & Password cannot be empty"),
-         
         ),
       );
       return;
     }
 
     final authVM = Provider.of<AuthViewModel>(context, listen: false);
+
     bool success = await authVM.login(username, password);
 
     if (success) {
@@ -50,26 +50,20 @@ class _LoginScreenState extends State<LoginScreen> {
       body: Stack(
         fit: StackFit.expand,
         children: [
-       
           Image.asset(
             "assets/background.png",
             fit: BoxFit.cover,
           ),
-
-      
           Center(
             child: SingleChildScrollView(
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-              
                   Image.asset(
                     "assets/logo.png",
                     height: 80,
                   ),
                   const SizedBox(height: 60),
-
-                
                   Card(
                     elevation: 5,
                     shape: RoundedRectangleBorder(
@@ -100,7 +94,6 @@ class _LoginScreenState extends State<LoginScreen> {
                           ),
                           const SizedBox(height: 15),
 
-                       
                           TextField(
                             controller: passwordController,
                             obscureText: !_passwordVisible,
@@ -124,7 +117,6 @@ class _LoginScreenState extends State<LoginScreen> {
                           ),
                           const SizedBox(height: 10),
 
-                        
                           Row(
                             children: [
                               Checkbox(
@@ -140,7 +132,6 @@ class _LoginScreenState extends State<LoginScreen> {
                           ),
                           const SizedBox(height: 15),
 
-                     
                           Consumer<AuthViewModel>(
                             builder: (context, authVM, child) {
                               return authVM.isLoading

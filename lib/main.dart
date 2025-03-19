@@ -7,7 +7,7 @@ import 'views/login_screen.dart';
 import 'views/product_management_screen.dart';
 import 'viewmodels/auth_viewmodel.dart';
 void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
+  WidgetsFlutterBinding.ensureInitialized(); 
   String? token = await getSavedToken(); 
 
   runApp(MyApp(initialRoute: token != null ? '/products' : '/login'));
